@@ -1,25 +1,25 @@
 export const config = {
     developer: {
-        name: "Redoyanul",
-        fullName: "Redoyanul Haque",
+        name: "Suman",
+        fullName: "Suman banik",
         title: "AI & Full-Stack Developer",
         description: "AI & Full-Stack Developer building intelligent systems and modern web applications. Passionate about machine learning, deep learning, and creating next-gen autonomous agents."
     },
     social: {
-        github: "red1-for-hek",
-        email: "redoyanul1234@gmail.com",
-        location: "Bangladesh"
+        github: "#",
+        email: "Suman1234@gmail.com",
+        location: "India"
     },
     about: {
         title: "About Me",
-        description: "I am a self-taught AI & Full-Stack Developer from Bangladesh. I build intelligent systems, chatbots, and modern web applications. My expertise includes Machine Learning, Deep Learning, NLP, and Full-Stack Web Development with React, Node.js, and Python. Currently building next-gen AI Agents and JARVIS-like Personal Assistants. I have a competitive programming mindset and a deep passion for automation. Code is poetry, AI is the canvas."
+        description: "I am a self-taught AI & Full-Stack Developer from India. I build intelligent systems, chatbots, and modern web applications. My expertise includes Machine Learning, Deep Learning, NLP, and Full-Stack Web Development with React, Node.js, and Python. Currently building next-gen AI Agents and JARVIS-like Personal Assistants. I have a competitive programming mindset and a deep passion for automation. Code is poetry, AI is the canvas."
     },
     experiences: [
         {
             position: "Learning Something New",
             company: "Self-Development",
             period: "2025 - Present",
-            location: "Bangladesh",
+            location: "India",
             description: "Continuously exploring emerging technologies, researching advanced AI systems, and pushing the boundaries of what's possible in tech.",
             responsibilities: [
                 "Researching cutting-edge AI and ML technologies",
@@ -167,11 +167,11 @@ export const config = {
         }
     ],
     contact: {
-        email: "redoyanul1234@gmail.com",
+        email: "Suman1234@gmail.com",
         github: "https://github.com/red1-for-hek",
         linkedin: "https://linkedin.com/in/red1-for-hek",
         twitter: "https://x.com/red_1_ul",
-        facebook: "https://www.facebook.com/redoyanulhaque.hacker.official",
+        facebook: "https://www.facebook.com/Sumanhaque.hacker.official",
         instagram: "https://www.instagram.com/red_1_ul"
     },
     skills: {

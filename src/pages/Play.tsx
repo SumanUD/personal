@@ -78,7 +78,7 @@ const Play = () => {
 
   // Chat state
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([
-    { role: 'assistant', content: 'Hello there! I am Redoyanul Haque 👋 Ask me anything you want to know!' }
+    { role: 'assistant', content: 'Hello there! I am Suman Banik👋 Ask me anything you want to know!' }
   ]);
   const [chatInput, setChatInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);

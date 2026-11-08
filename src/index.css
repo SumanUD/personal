@@ -59,6 +59,17 @@ body {
   }
 }
 
+.navbar-title-dot {
+  color: var(--accentColor);
+}
+
+input,
+textarea,
+select {
+  user-select: text;
+  -webkit-user-select: text;
+}
+
 a {
   color: inherit;
   text-decoration: inherit;

@@ -31,17 +31,20 @@ export const LoadingProvider = ({ children }: PropsWithChildren) => {
   useEffect(() => {
     // Auto-start animations on mobile since there's no 3D model
     if (window.innerWidth <= 768) {
+      // The hero is lazy-loaded: wait until its text exists before animating it
       import("../components/utils/initialFX").then((module) => {
-        if (module.initialFX) {
-          setTimeout(() => {
-            module.initialFX();
-          }, 100);
-        }
+        const started = performance.now();
+        const tryStart = () => {
+          if (document.querySelector(".landing-h2-1") || performance.now() - started > 4000) {
+            module.initialFX?.();
+          } else {
+            requestAnimationFrame(tryStart);
+          }
+        };
+        setTimeout(tryStart, 100);
       });
     }
   }, []);
-
-  useEffect(() => {}, [loading]);
 
   return (
     <LoadingContext.Provider value={value as LoadingType}>

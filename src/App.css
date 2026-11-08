@@ -27,3 +27,8 @@
     max-width: var(--cWidth);
   }
 }
+
+.page-fallback {
+  min-height: 100vh;
+  background: var(--backgroundColor);
+}

@@ -1,0 +1,85 @@
+.wa-float {
+  position: fixed;
+  right: 18px;
+  bottom: 22px;
+  z-index: 10000;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #25d366;
+  color: #fff;
+  font-size: 30px;
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.45);
+  transition: transform 0.3s;
+  animation: waIn 0.6s 2.5s both cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.wa-float:hover {
+  color: #fff;
+  transform: scale(1.08);
+}
+.wa-float svg {
+  position: relative;
+  z-index: 2;
+}
+.wa-float-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid #25d366;
+  animation: waPulse 2.4s ease-out infinite;
+}
+.wa-float-ring-2 {
+  animation-delay: 1.2s;
+}
+.wa-float-label {
+  position: absolute;
+  right: calc(100% + 12px);
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: #fff;
+  color: #0b080c;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateX(10px);
+  transition: 0.3s;
+  pointer-events: none;
+}
+.wa-float:hover .wa-float-label {
+  opacity: 1;
+  transform: none;
+}
+@keyframes waPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+@keyframes waIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+/* On large screens WhatsApp lives in the left icon rail instead */
+@media only screen and (min-width: 900px) {
+  .wa-float {
+    display: none;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .resume-button {
+    bottom: 110px !important;
+  }
+}

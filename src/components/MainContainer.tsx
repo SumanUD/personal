@@ -10,34 +10,36 @@ import WhatIDo from "./WhatIDo";
 import Work from "./Work";
 import TechStackNew from "./TechStackNew";
 import CallToAction from "./CallToAction";
+import WhatsAppButton from "./WhatsAppButton";
 import setSplitText from "./utils/splitText";
 
 const MainContainer = ({ children }: PropsWithChildren) => {
-  const [isDesktopView, setIsDesktopView] = useState<boolean>(
-    window.innerWidth > 1024
-  );
-  const [isMobile] = useState<boolean>(window.innerWidth <= 768);
+  const [isDesktopView, setIsDesktopView] = useState<boolean>(window.innerWidth > 1024);
 
   useEffect(() => {
+    let lastWidth = window.innerWidth;
     const resizeHandler = () => {
+      if (window.innerWidth === lastWidth) return; // ignore mobile URL-bar jitter
+      lastWidth = window.innerWidth;
       setSplitText();
       setIsDesktopView(window.innerWidth > 1024);
     };
-    resizeHandler();
+    setSplitText();
     window.addEventListener("resize", resizeHandler);
-    return () => {
-      window.removeEventListener("resize", resizeHandler);
-    };
-  }, [isDesktopView]);
+    return () => window.removeEventListener("resize", resizeHandler);
+  }, []);
 
   return (
     <div className="container-main">
       <Cursor />
       <Navbar />
       <SocialIcons />
-      {isDesktopView && !isMobile && children}
+      <WhatsAppButton />
+      {/* Desktop: the 3D character is fixed full-screen and follows the scroll story */}
+      {isDesktopView && children}
       <div className="container-main">
-        <Landing />
+        {/* Mobile / tablet: the character lives inside the hero */}
+        <Landing>{!isDesktopView && children}</Landing>
         <About />
         <WhatIDo />
         <Career />

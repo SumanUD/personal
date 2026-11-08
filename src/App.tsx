@@ -1,13 +1,14 @@
 import { lazy, Suspense } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Analytics } from "@vercel/analytics/react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
+import { LoadingProvider } from "./context/LoadingProvider";
 
 const CharacterModel = lazy(() => import("./components/Character"));
 const MainContainer = lazy(() => import("./components/MainContainer"));
 const MyWorks = lazy(() => import("./pages/MyWorks"));
-const Play = lazy(() => import("./pages/Play"));
-import { LoadingProvider } from "./context/LoadingProvider";
+const Start = lazy(() => import("./pages/Start"));
+
+const PageFallback = () => <div className="page-fallback" />;
 
 const App = () => {
   return (
@@ -30,21 +31,22 @@ const App = () => {
         <Route
           path="/myworks"
           element={
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<PageFallback />}>
               <MyWorks />
             </Suspense>
           }
         />
         <Route
-          path="/play"
+          path="/start"
           element={
-            <Suspense fallback={<div>Loading...</div>}>
-              <Play />
+            <Suspense fallback={<PageFallback />}>
+              <Start />
             </Suspense>
           }
         />
+        <Route path="/play" element={<Navigate to="/start" replace />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-      <Analytics />
     </BrowserRouter>
   );
 };

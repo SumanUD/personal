@@ -6,6 +6,8 @@ const Landing = ({ children }: PropsWithChildren) => {
   const nameParts = config.developer.fullName.split(" ");
   const firstName = nameParts[0] || config.developer.name;
   const lastName = nameParts.slice(1).join(" ") || "";
+  const [accent1, accent2] = config.developer.rolesAccent;
+  const [second1, second2] = config.developer.rolesSecondary;
 
   return (
     <>
@@ -14,24 +16,21 @@ const Landing = ({ children }: PropsWithChildren) => {
           <div className="landing-intro">
             <h2>Hello! I'm</h2>
             <h1>
-              {firstName.toUpperCase()}
-              {' '}
+              {firstName.toUpperCase()}{" "}
               <br />
               {lastName && <span>{lastName.toUpperCase()}</span>}
             </h1>
           </div>
           <div className="landing-info">
-            <h3>An</h3>
+            <h3>A</h3>
             <h2 className="landing-info-h2">
-              <div className="landing-h2-1">AI Engineer</div>
+              <div className="landing-h2-1">{accent1}</div>
+              <div className="landing-h2-2">{accent2}</div>
             </h2>
             <h2>
-              <div className="landing-h2-info">Full-Stack Developer</div>
+              <div className="landing-h2-info">{second1}</div>
+              <div className="landing-h2-info-1">{second2}</div>
             </h2>
-          </div>
-          {/* Mobile photo - shows only on mobile when 3D character is hidden */}
-          <div className="mobile-photo">
-            <img src="/images/mypicnbg.png" alt="Redoyanul Haque" />
           </div>
         </div>
         {children}

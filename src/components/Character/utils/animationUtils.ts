@@ -80,7 +80,32 @@ const setAnimations = (gltf: GLTF) => {
       hoverDiv.removeEventListener("mouseleave", onLeaveFace);
     };
   }
-  return { mixer, startIntro, hover };
+  // Quick facial reactions used when the visitor taps / clicks the character
+  const browFlash = createBoneAction(gltf, mixer, "browup", eyebrowBoneNames);
+  if (browFlash) {
+    browFlash.setLoop(THREE.LoopOnce, 1);
+    browFlash.clampWhenFinished = true;
+  }
+  const angryBrows = createBoneAction(gltf, mixer, "angry", eyebrowBoneNames);
+  if (angryBrows) {
+    angryBrows.setLoop(THREE.LoopOnce, 1);
+    angryBrows.clampWhenFinished = true;
+  }
+  let reactionTimer: ReturnType<typeof setTimeout> | undefined;
+  function react(kind: "surprised" | "angry") {
+    const action = kind === "angry" ? angryBrows : browFlash;
+    const other = kind === "angry" ? browFlash : angryBrows;
+    if (!action) return;
+    other?.fadeOut(0.2);
+    action.reset();
+    action.enabled = true;
+    action.setEffectiveWeight(kind === "angry" ? 2 : 4);
+    action.fadeIn(0.25).play();
+    clearTimeout(reactionTimer);
+    reactionTimer = setTimeout(() => action.fadeOut(0.6), kind === "angry" ? 2200 : 1100);
+  }
+
+  return { mixer, startIntro, hover, react };
 };
 
 const createBoneAction = (

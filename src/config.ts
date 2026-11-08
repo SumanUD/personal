@@ -1,104 +1,95 @@
+// ─────────────────────────────────────────────────────────────
+//  Site content lives here. Edit this file to update the site.
+// ─────────────────────────────────────────────────────────────
+
+const whatsappNumber = "918348961318"; // country code + number, digits only
+
 export const config = {
+    site: {
+        url: "https://sumanbanik.com",
+    },
     developer: {
         name: "Suman",
-        fullName: "Suman banik",
-        title: "AI & Full-Stack Developer",
-        description: "AI & Full-Stack Developer building intelligent systems and modern web applications. Passionate about machine learning, deep learning, and creating next-gen autonomous agents."
+        fullName: "Suman Banik",
+        initials: "SB",
+        title: "Shopify Expert, Full-Stack & AI Engineer",
+        description:
+            "Shopify expert, full-stack developer and AI/ML engineer with 6+ years of experience building high-converting stores, scalable web apps, intelligent automation and business software like HRMS.",
+        // Rotating words in the hero (accent line / white line)
+        rolesAccent: ["Shopify", "Full-Stack"],
+        rolesSecondary: ["Expert", "AI Engineer"],
     },
     social: {
-        github: "#",
-        email: "Suman1234@gmail.com",
-        location: "India"
+        email: "baniksuman918@gmail.com",
+        location: "Dooars, West Bengal, India",
+    },
+    whatsapp: {
+        number: whatsappNumber,
+        display: "+91 83489 61318",
+        link: (text = "Hi Suman, I found your portfolio and would like to discuss a project.") =>
+            `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`,
     },
     about: {
         title: "About Me",
-        description: "I am a self-taught AI & Full-Stack Developer from India. I build intelligent systems, chatbots, and modern web applications. My expertise includes Machine Learning, Deep Learning, NLP, and Full-Stack Web Development with React, Node.js, and Python. Currently building next-gen AI Agents and JARVIS-like Personal Assistants. I have a competitive programming mindset and a deep passion for automation. Code is poetry, AI is the canvas."
+        description:
+            "I'm Suman, a B.Tech engineer from the foothills of the Dooars with 6+ years of shipping real products. I build advanced Shopify stores, custom themes and apps, full-stack web platforms, and AI/ML systems that automate real business work. I also design and build my own software products, including a complete HRMS. Whether you need a store that sells, a SaaS that scales or AI that saves hours every week, I take it from idea to launch.",
     },
+    stats: [
+        { value: "6+", label: "Years experience" },
+        { value: "B.Tech", label: "Engineering" },
+        { value: "3-in-1", label: "Shopify · Web · AI" },
+    ],
     experiences: [
         {
-            position: "Learning Something New",
-            company: "Self-Development",
-            period: "2025 - Present",
+            position: "Founder & Product Engineer",
+            company: "HRMS & In-house Software",
+            period: "01",
             location: "India",
-            description: "Continuously exploring emerging technologies, researching advanced AI systems, and pushing the boundaries of what's possible in tech.",
-            responsibilities: [
-                "Researching cutting-edge AI and ML technologies",
-                "Experimenting with new frameworks and tools",
-                "Contributing to open-source projects",
-                "Building innovative personal projects"
-            ],
-            technologies: ["Research", "Innovation", "Open Source", "New Tech"]
+            description:
+                "Designing, building and shipping my own software products, including a full-featured HRMS, used by real businesses to run their day-to-day operations.",
+            responsibilities: [],
+            technologies: ["SaaS", "React", "Node.js", "PostgreSQL"],
         },
         {
-            position: "AI Engineer",
-            company: "Freelance & Projects",
-            period: "2025",
-            location: "Bangladesh",
-            description: "Developing intelligent AI systems, chatbots, and machine learning solutions. Building next-gen conversational AI agents and JARVIS-like personal assistants.",
-            responsibilities: [
-                "Building AI-powered chatbots and conversational agents",
-                "Developing machine learning models with TensorFlow and PyTorch",
-                "Working with LLMs and transformer architectures",
-                "Creating autonomous AI systems and automation tools"
-            ],
-            technologies: ["Python", "TensorFlow", "PyTorch", "LLMs", "NLP", "AI Agents"]
+            position: "AI & ML Engineer",
+            company: "Client & Product Work",
+            period: "02",
+            location: "Remote",
+            description:
+                "Building LLM-powered assistants, chatbots, RAG pipelines, predictive models and automation that plug straight into existing business workflows.",
+            responsibilities: [],
+            technologies: ["Python", "PyTorch", "TensorFlow", "LLMs"],
+        },
+        {
+            position: "Shopify Expert",
+            company: "Stores, Themes & Apps",
+            period: "03",
+            location: "Remote",
+            description:
+                "Custom OS 2.0 themes, Liquid, Shopify apps, Plus & headless (Hydrogen) builds, checkout extensions, migrations and speed optimisation for brands worldwide.",
+            responsibilities: [],
+            technologies: ["Liquid", "Shopify Apps", "Hydrogen", "Plus"],
         },
         {
             position: "Full-Stack Developer",
-            company: "Freelance & Projects",
-            period: "2024",
-            location: "Bangladesh",
-            description: "Built complete web applications from frontend to backend. Developed responsive UIs, RESTful APIs, and database solutions for various clients and projects.",
-            responsibilities: [
-                "Developing full-stack web applications using React and Node.js",
-                "Building RESTful APIs and integrating databases",
-                "Creating responsive and interactive user interfaces",
-                "Deploying and maintaining web applications"
-            ],
-            technologies: ["React", "Node.js", "MongoDB", "Express", "Next.js", "TypeScript"]
+            company: "Freelance & Agency Projects",
+            period: "04",
+            location: "Remote",
+            description:
+                "End-to-end web apps, dashboards and APIs with React, Next.js, Node.js and modern databases, from pixel-perfect UI to cloud deployment.",
+            responsibilities: [],
+            technologies: ["React", "Next.js", "Node.js", "MongoDB"],
         },
         {
-            position: "Python Developer",
-            company: "Self-Taught & Projects",
-            period: "2023",
-            location: "Bangladesh",
-            description: "Dove deep into Python programming, building automation scripts, bots, and mastering the fundamentals of software development and problem-solving.",
-            responsibilities: [
-                "Learning Python programming and core concepts",
-                "Building automation scripts and Discord bots",
-                "Exploring data structures and algorithms",
-                "Participating in competitive programming"
-            ],
-            technologies: ["Python", "Automation", "Scripting", "Discord.py", "Problem Solving"]
+            position: "B.Tech in Engineering",
+            company: "Education",
+            period: "05",
+            location: "India",
+            description:
+                "Strong engineering foundations in programming, data structures, algorithms and systems design: the base everything else is built on.",
+            responsibilities: [],
+            technologies: [],
         },
-        {
-            position: "Graphic Designer",
-            company: "Freelance",
-            period: "2022",
-            location: "Bangladesh",
-            description: "Started my creative journey as a graphic designer, creating logos, banners, and visual content. This sparked my passion for technology and digital creation.",
-            responsibilities: [
-                "Designing logos and brand identity materials",
-                "Creating social media graphics and banners",
-                "Working with clients on creative projects",
-                "Learning design principles and visual aesthetics"
-            ],
-            technologies: ["Photoshop", "Illustrator", "Canva", "Figma", "Visual Design"]
-        },
-        {
-            position: "Microsoft Office",
-            company: "Begin Learning",
-            period: "2021",
-            location: "Bangladesh",
-            description: "Started my journey into the digital world by learning Microsoft Office tools. This foundational step introduced me to computers and sparked my curiosity for technology.",
-            responsibilities: [
-                "Learning Microsoft Word, Excel, and PowerPoint",
-                "Creating documents and presentations",
-                "Understanding basic computer operations",
-                "Building foundational digital skills"
-            ],
-            technologies: ["MS Word", "MS Excel", "MS PowerPoint", "Computer Basics"]
-        }
     ],
     projects: [
         {
@@ -167,27 +158,28 @@ export const config = {
         }
     ],
     contact: {
-        email: "Suman1234@gmail.com",
-        github: "https://github.com/red1-for-hek",
-        linkedin: "https://linkedin.com/in/red1-for-hek",
-        twitter: "https://x.com/red_1_ul",
-        facebook: "https://www.facebook.com/Sumanhaque.hacker.official",
-        instagram: "https://www.instagram.com/red_1_ul"
+        email: "baniksuman918@gmail.com",
+        // Leave a link empty ("") to hide it everywhere on the site.
+        github: "",
+        linkedin: "",
+        twitter: "",
+        facebook: "",
+        instagram: "",
     },
     skills: {
         develop: {
-            title: "AI DEVELOPER",
-            description: "Building intelligent systems & AI solutions",
-            details: "Developing AI agents, chatbots, and machine learning models using Python, TensorFlow, and PyTorch. Specializing in LLMs, NLP, deep learning, and autonomous systems.",
-            tools: ["Python", "TensorFlow", "PyTorch", "OpenCV", "Scikit-learn", "LLMs", "NLP", "Deep Learning", "Chatbots", "AI Agents"]
+            title: "SHOPIFY EXPERT",
+            description: "Stores that load fast and sell more",
+            details:
+                "Custom OS 2.0 themes, Shopify apps, Shopify Plus, headless Hydrogen storefronts, checkout extensions, Functions, migrations and conversion-focused speed optimisation.",
+            tools: ["Liquid", "OS 2.0 Themes", "Shopify Apps", "Remix", "Hydrogen", "Shopify Plus", "Functions", "Checkout UI", "Storefront API", "Migrations"],
         },
         design: {
-            title: "FULL-STACK",
-            description: "Modern web development & scalable applications",
-            details: "Building responsive and performant web applications using React, Next.js, Node.js, and databases. Creating seamless user experiences with modern UI/UX principles.",
-            tools: ["React", "Next.js", "Node.js", "TypeScript", "MongoDB", "PostgreSQL", "TailwindCSS", "REST APIs", "Docker", "Git"]
-        }
-    }
+            title: "FULL-STACK & AI",
+            description: "Web apps, SaaS & intelligent automation",
+            details:
+                "Scalable web platforms and business software (like my own HRMS), plus AI/ML: LLM agents, chatbots, RAG, computer vision and predictive models built into real products.",
+            tools: ["React", "Next.js", "Node.js", "TypeScript", "Python", "PyTorch", "TensorFlow", "LLMs & RAG", "PostgreSQL", "Docker"],
+        },
+    },
 };
-
-

@@ -13,6 +13,14 @@ const setLighting = (scene: THREE.Scene) => {
   directionalLight.shadow.camera.far = 50;
   scene.add(directionalLight);
 
+  // Accent rim light from behind-left and a soft pink fill from the right
+  const rimLight = new THREE.DirectionalLight(0xa26bff, 0);
+  rimLight.position.set(-1.2, 0.8, -1.4);
+  scene.add(rimLight);
+  const fillLight = new THREE.DirectionalLight(0xfb8dff, 0);
+  fillLight.position.set(1.4, 0.3, 0.8);
+  scene.add(fillLight);
+
   const pointLight = new THREE.PointLight(0xc2a4ff, 0, 100, 3);
   pointLight.position.set(3, 12, 4);
   pointLight.castShadow = true;
@@ -47,6 +55,8 @@ const setLighting = (scene: THREE.Scene) => {
       duration: duration,
       ease: ease,
     });
+    gsap.to(rimLight, { intensity: 2.2, duration: duration * 1.5, ease: ease, delay: 0.4 });
+    gsap.to(fillLight, { intensity: 0.35, duration: duration * 1.5, ease: ease, delay: 0.4 });
     gsap.to(".character-rim", {
       y: "55%",
       opacity: 1,

@@ -3,8 +3,18 @@
   padding: 80px 20px;
   background-color: var(--backgroundColor);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 24px;
+  box-sizing: border-box;
+}
+
+.cta-kicker {
+  margin: 0;
+  font-size: 20px;
+  opacity: 0.75;
+  text-align: center;
 }
 
 .cta-buttons {

@@ -2,12 +2,72 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- <link rel="icon" type="image/svg+xml" href="/" /> -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Suman Banik- AI Developer | Python Engineer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#0b080c" />
+
+    <title>Suman Banik | Shopify Expert, Full-Stack &amp; AI Engineer</title>
+    <meta
+      name="description"
+      content="Suman Banik: Shopify expert, full-stack developer and AI/ML engineer with 6+ years of experience. Custom Shopify themes & apps, web apps, SaaS, HRMS and AI automation."
+    />
+    <meta name="author" content="Suman Banik" />
+    <link rel="canonical" href="https://sumanbanik.com/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sumanbanik.com/" />
+    <meta property="og:title" content="Suman Banik | Shopify Expert, Full-Stack & AI Engineer" />
+    <meta
+      property="og:description"
+      content="Custom Shopify stores & apps, full-stack web apps, HRMS and AI/ML solutions. 6+ years of building products that work."
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Suman Banik | Shopify Expert, Full-Stack & AI Engineer" />
+    <meta
+      name="twitter:description"
+      content="Custom Shopify stores & apps, full-stack web apps, HRMS and AI/ML solutions."
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Suman Banik",
+        "url": "https://sumanbanik.com/",
+        "email": "mailto:baniksuman918@gmail.com",
+        "jobTitle": "Shopify Expert, Full-Stack & AI Engineer",
+        "address": { "@type": "PostalAddress", "addressRegion": "West Bengal", "addressCountry": "IN" },
+        "knowsAbout": ["Shopify", "Shopify Plus", "Liquid", "React", "Next.js", "Node.js", "Python", "Machine Learning", "Artificial Intelligence", "HRMS"]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
+
+    <!--
+      Static copies of the site's forms so Netlify Forms can detect them at deploy time.
+      The real forms are rendered by React and submit via fetch (src/utils/netlifyForm.ts).
+    -->
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="service" />
+      <textarea name="message"></textarea>
+      <input type="text" name="bot-field" />
+    </form>
+    <form name="project-brief" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="service" />
+      <input type="text" name="features" />
+      <input type="text" name="budget" />
+      <input type="text" name="timeline" />
+      <textarea name="message"></textarea>
+      <input type="text" name="bot-field" />
+    </form>
+
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

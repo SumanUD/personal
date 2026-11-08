@@ -5,19 +5,19 @@ import "./styles/CallToAction.css";
 const CallToAction = () => {
   return (
     <div className="cta-section">
+      <p className="cta-kicker">Have an idea, a store or a product in mind?</p>
       <div className="cta-buttons">
-        <Link to="/play" className="cta-btn cta-btn-play" data-cursor="disable">
-          Play With Me →
+        <Link to="/start" className="cta-btn cta-btn-play" data-cursor="disable">
+          Plan Your Project →
         </Link>
-        
-        <a 
-          href={config.contact.linkedin} 
-          target="_blank" 
-          rel="noopener noreferrer" 
+        <a
+          href={config.whatsapp.link()}
+          target="_blank"
+          rel="noopener noreferrer"
           className="cta-btn cta-btn-hire"
           data-cursor="disable"
         >
-          Hire Me →
+          Hire Me on WhatsApp →
         </a>
       </div>
     </div>

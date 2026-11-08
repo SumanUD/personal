@@ -81,57 +81,25 @@ export function initialFX() {
   LoopText(landingText4, landingText5);
 }
 
+/** Swaps two words in place forever: slide/fade one out, the other in. */
 function LoopText(Text1: TextSplitter, Text2: TextSplitter) {
-  var tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
-  const delay = 4;
-  const delay2 = delay * 2 + 1;
-
-  tl.fromTo(
-    Text2.chars,
-    { opacity: 0, y: 80 },
-    {
-      opacity: 1,
-      duration: 1.2,
-      ease: "power3.inOut",
-      y: 0,
-      stagger: 0.1,
-      delay: delay,
-    },
-    0
-  )
-    .fromTo(
-      Text1.chars,
-      { y: 80 },
-      {
-        duration: 1.2,
-        ease: "power3.inOut",
-        y: 0,
-        stagger: 0.1,
-        delay: delay2,
-      },
-      1
-    )
-    .fromTo(
-      Text1.chars,
-      { y: 0 },
-      {
-        y: -80,
-        duration: 1.2,
-        ease: "power3.inOut",
-        stagger: 0.1,
-        delay: delay,
-      },
-      0
-    )
-    .to(
-      Text2.chars,
-      {
-        y: -80,
-        duration: 1.2,
-        ease: "power3.inOut",
-        stagger: 0.1,
-        delay: delay2,
-      },
-      1
+  gsap.set(Text2.chars, { opacity: 0, yPercent: 100 });
+  const tl = gsap.timeline({ repeat: -1, delay: 3.5 });
+  const swap = (out: TextSplitter, inn: TextSplitter) => {
+    tl.to(out.chars, {
+      yPercent: -100,
+      opacity: 0,
+      duration: 0.7,
+      ease: "power3.in",
+      stagger: 0.035,
+    }).fromTo(
+      inn.chars,
+      { yPercent: 100, opacity: 0 },
+      { yPercent: 0, opacity: 1, duration: 0.8, ease: "power3.out", stagger: 0.035 },
+      "-=0.35"
     );
+    tl.to({}, { duration: 3 });
+  };
+  swap(Text1, Text2);
+  swap(Text2, Text1);
 }

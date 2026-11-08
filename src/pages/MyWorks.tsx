@@ -1,8 +1,16 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import WhatsAppButton from "../components/WhatsAppButton";
 import { config } from "../config";
 import "./MyWorks.css";
 
 const MyWorks = () => {
+  useEffect(() => {
+    document.body.style.overflowY = "auto";
+    document.title = `Work | ${config.developer.fullName}`;
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="myworks-page">
       <div className="myworks-header">
@@ -31,6 +39,7 @@ const MyWorks = () => {
           </div>
         ))}
       </div>
+      <WhatsAppButton />
     </div>
   );
 };

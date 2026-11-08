@@ -194,9 +194,9 @@
   color: var(--backgroundColor);
 }
 .loader-title {
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 0.2px;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 1px;
 }
 @keyframes blink {
   0% {
@@ -350,7 +350,7 @@
     padding: 20px 0px;
   }
   .loader-title {
-    font-size: 16px;
+    font-size: 22px;
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -358,6 +358,6 @@
     padding: 35px 0px;
   }
   .loader-title {
-    font-size: 18px;
+    font-size: 26px;
   }
 }
